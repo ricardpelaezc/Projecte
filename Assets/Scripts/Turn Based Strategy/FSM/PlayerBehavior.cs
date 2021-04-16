@@ -82,21 +82,25 @@ public class PlayerBehavior : MonoBehaviour
         return null;
     }
 
-    //private void ShowRangeEnter()
-    //{
-    //    var range = EntityManager.ExecutorEntity.Range;
-    //    for (int j = -range; j <= range; j++)
-    //    {
-    //        var numberOfTiles = 1 + 2 * (Mathf.Abs(j) - range);
-    //        for (int i = -range; i <= range; i++)
-    //        {
-    //            if (numberOfTiles - range >= numberOfTiles)
-    //            var pos = _selectedGridPos + new Vector3Int(i, j, 0);
-    //            if (CanMove(pos))
-    //                _uITilemap.SetTile(pos, _rangeTile);
-    //        }
-    //    }
-    //}
+    private void ShowRangeEnter()
+    {
+        var range = EntityManager.ExecutorEntity.Range;
+        for (int j = -range; j <= range; j++)
+        {
+            var numberOfTiles = 1 + 2 * (Mathf.Abs(j) - range);
+            for (int i = -range; i <= range; i++)
+            {
+                Debug.Log(numberOfTiles - range < numberOfTiles);
+                if (numberOfTiles - range < numberOfTiles)
+                {
+                    Vector3Int vector = new Vector3Int(i, j, 0);
+                    var pos = _selectedGridPos + vector;
+                    if (CanMove(pos))
+                        _uITilemap.SetTile(pos, _rangeTile);
+                }
+            }
+        }
+    }
     private bool CanMove(Vector3Int pos)
     {
         if (!_floorTilemap.HasTile(pos) || _collisionTilemap.HasTile(pos))
