@@ -41,3 +41,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Floor Tiles
+    uniqueID: 1709987707
+    locked: 0
+  - name: Detail Tiles
+    uniqueID: 2775299417
+    locked: 0
+  - name: UI Tiles
+    uniqueID: 1969795171
+    locked: 0
+  - name: Collision Tiles
+    uniqueID: 620239045
+    locked: 0
+  - name: Characters
+    uniqueID: 3254996285
+    locked: 0
